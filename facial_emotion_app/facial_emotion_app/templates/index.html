@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EmotiScan — Reconocimiento Facial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <span class="logo-icon">◎</span>
+      <span class="logo-text">EmotiScan</span>
+    </div>
+    <p class="logo-sub">Reconocimiento facial · Universidad Santiago de Cali</p>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Detecta tu expresión,<br/><em>cuida tu bienestar</em></h1>
+      <p class="hero-sub">Herramienta de apoyo emocional preliminar basada en redes neuronales convolucionales. Captura o sube una foto y recibe orientación personalizada.</p>
+    </section>
+
+    <!-- AVISO ÉTICO -->
+    <div class="aviso">
+      <span class="aviso-icon">⚠</span>
+      <span>Esta herramienta <strong>no emite diagnósticos clínicos</strong> ni almacena datos personales. Es un apoyo preliminar al bienestar emocional. Ley 1581 de 2012.</span>
+    </div>
+
+    <!-- PANEL PRINCIPAL -->
+    <div class="panel">
+
+      <!-- IZQUIERDA: Captura -->
+      <div class="panel-left">
+        <h2>Captura tu imagen</h2>
+
+        <!-- Tabs -->
+        <div class="tabs">
+          <button class="tab active" onclick="showTab('camara')">📷 Cámara</button>
+          <button class="tab" onclick="showTab('archivo')">📁 Subir foto</button>
+        </div>
+
+        <!-- Tab Cámara -->
+        <div id="tab-camara" class="tab-content active">
+          <div class="video-wrapper">
+            <video id="video" autoplay playsinline></video>
+            <canvas id="canvas" style="display:none"></canvas>
+            <div class="video-overlay" id="video-overlay">
+              <button class="btn-cam" onclick="startCamera()">Activar cámara</button>
+            </div>
+          </div>
+          <div class="cam-controls">
+            <button class="btn-primary" id="btn-capture" onclick="capturePhoto()" disabled>
+              <span>◉</span> Capturar
+            </button>
+            <button class="btn-secondary" onclick="stopCamera()">Detener</button>
+          </div>
+        </div>
+
+        <!-- Tab Archivo -->
+        <div id="tab-archivo" class="tab-content">
+          <label class="drop-zone" id="drop-zone">
+            <input type="file" id="file-input" accept="image/*" onchange="handleFile(event)" hidden/>
+            <div class="drop-icon">⊕</div>
+            <p>Arrastra una imagen aquí<br/>o <span class="link">haz clic para seleccionar</span></p>
+            <p class="drop-hint">JPG, PNG, WEBP · Máx 5MB</p>
+          </label>
+        </div>
+
+        <!-- Preview -->
+        <div class="preview-area" id="preview-area" style="display:none">
+          <img id="preview-img" alt="Preview"/>
+          <button class="btn-analyze" id="btn-analyze" onclick="analyzeImage()">
+            Analizar expresión →
+          </button>
+        </div>
+      </div>
+
+      <!-- DERECHA: Resultado -->
+      <div class="panel-right">
+        <h2>Resultado</h2>
+
+        <!-- Estado inicial -->
+        <div class="result-empty" id="result-empty">
+          <div class="empty-icon">◎</div>
+          <p>Captura o sube una imagen<br/>para comenzar el análisis</p>
+        </div>
+
+        <!-- Loading -->
+        <div class="result-loading" id="result-loading" style="display:none">
+          <div class="spinner"></div>
+          <p>Analizando expresión…</p>
+        </div>
+
+        <!-- Resultado -->
+        <div class="result-content" id="result-content" style="display:none">
+          <div class="emocion-card" id="emocion-card">
+            <div class="emocion-emoji" id="emocion-emoji"></div>
+            <div class="emocion-info">
+              <div class="emocion-label" id="emocion-label"></div>
+              <div class="emocion-confianza" id="emocion-confianza"></div>
+            </div>
+          </div>
+
+          <!-- Barras de probabilidad -->
+          <div class="prob-section">
+            <h3>Distribución de probabilidades</h3>
+            <div id="prob-bars"></div>
+          </div>
+
+          <!-- Mensaje -->
+          <div class="mensaje-card" id="mensaje-card">
+            <p id="mensaje-text"></p>
+          </div>
+
+          <!-- Recursos -->
+          <div class="recursos-section">
+            <h3>Recursos de apoyo</h3>
+            <div id="recursos-list"></div>
+          </div>
+
+          <button class="btn-reset" onclick="resetResult()">↩ Nuevo análisis</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>EmotiScan · Universidad Santiago de Cali · Ingeniería de Sistemas · 2025</p>
+    <p>ODS 3 — Salud y Bienestar · Esta herramienta no reemplaza atención profesional</p>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
