@@ -34,9 +34,8 @@ RECURSOS = {
         'mensaje': '¡Tu expresión refleja bienestar! Sigue cuidando tu salud mental.',
         'color': '#22c55e',
         'recursos': [
-            {'nombre': 'Hablemos de Todo', 'url': 'https://hablemosdetodo.gov.co', 'desc': 'Plataforma para jóvenes'},
-            {'nombre': 'Mentally Colombia', 'url': 'https://mentally.co', 'desc': 'App de bienestar mental'},
-            {'nombre': 'Minsalud - Salud Mental', 'url': 'https://www.minsalud.gov.co/salud/publica/SMental', 'desc': 'Recursos oficiales'},
+            {'nombre': 'Línea 106', 'url': 'tel:106', 'desc': 'Apoyo psicológico gratuito 24/7'},
+            {'nombre': 'Aquí Estoy Chat', 'url': 'https://aquiestoy.chat', 'desc': 'Chat de apoyo emocional'},
         ]
     },
     'neutral': {
@@ -45,9 +44,8 @@ RECURSOS = {
         'mensaje': 'Pareces tranquilo/a. Si necesitas apoyo, estos recursos están disponibles.',
         'color': '#3b82f6',
         'recursos': [
-            {'nombre': 'Aquí Estoy Colombia', 'url': 'https://aquiestoy.co', 'desc': 'Chat de apoyo emocional'},
-            {'nombre': 'Mentally Colombia', 'url': 'https://mentally.co', 'desc': 'App de bienestar mental'},
-            {'nombre': 'Línea 106', 'url': 'tel:106', 'desc': 'Línea gratuita 24/7'},
+            {'nombre': 'Línea 106', 'url': 'tel:106', 'desc': 'Apoyo psicológico gratuito 24/7'},
+            {'nombre': 'Aquí Estoy Chat', 'url': 'https://aquiestoy.chat', 'desc': 'Chat de apoyo emocional'},
         ]
     },
     'sad': {
@@ -56,9 +54,8 @@ RECURSOS = {
         'mensaje': 'Parece que puedes estar pasando un momento difícil. No estás solo/a.',
         'color': '#f59e0b',
         'recursos': [
-            {'nombre': 'Línea 106', 'url': 'tel:106', 'desc': 'Línea gratuita 24/7'},
-            {'nombre': 'Aquí Estoy Colombia', 'url': 'https://aquiestoy.co', 'desc': 'Chat de apoyo emocional'},
-            {'nombre': 'Fundación Escucha', 'url': 'https://fundacionescucha.org', 'desc': 'Apoyo psicológico gratuito'},
+            {'nombre': 'Línea 106', 'url': 'tel:106', 'desc': 'Apoyo psicológico gratuito 24/7'},
+            {'nombre': 'Aquí Estoy Chat', 'url': 'https://aquiestoy.chat', 'desc': 'Chat de apoyo emocional'},
         ]
     }
 }
